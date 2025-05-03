@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tareas</title>
+ 
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+
+  <div class="formulario">
+    <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea..." />
+    <button id="agregar-btn">Agregar</button>
+  </div>
+
+  <ul id="lista-tareas"></ul>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#agregar-btn').click(function () {
+        const textoTarea = $('#nueva-tarea').val().trim();
+        if (textoTarea) {
+          agregarTarea(textoTarea);
+          $('#nueva-tarea').val('');
+        }
+      });
+
+      $('#lista-tareas').on('click', '.completar-btn', function () {
+        $(this).closest('li').toggleClass('completada');
+      });
+
+      $('#lista-tareas').on('click', '.eliminar-btn', function () {
+        $(this).closest('li').remove();
+      });
+
+      function agregarTarea(texto) {
+        const ahora = new Date();
+        const hora = ahora.toLocaleTimeString('es-ES', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        const tareaHTML = `
+          <li>
+            <div class="tarea-texto">
+              <span>${texto}</span>
+              <div class="tarea-hora">Añadida a las ${hora}</div>
+            </div>
+            <div class="botones">
+              <button class="completar-btn">Completar</button>
+              <button class="eliminar-btn">Eliminar</button>
+            </div>
+          </li>`;
+        $('#lista-tareas').append(tareaHTML);
+      }
+    });
+  </script>
+</body>
+</html>
