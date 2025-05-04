@@ -1,0 +1,127 @@
+:root {
+    --background-color: #f9fafb;
+    --primary-color: #ff5e5e;
+    --text-color: #374151;
+    --completed-color: #9ca3af;
+    --button-hover: #ff5e5e;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  
+  #nueva-tarea {
+    flex: 1 1 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  #agregar-btn {
+    flex: 1 1 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  #agregar-btn:hover {
+    background-color: var(--button-hover);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+  }
+  
+  .completada {
+    text-decoration: line-through;
+    color: var(--completed-color);
+  }
+  
+  .tarea-texto {
+    flex: 1 1 100%;
+  }
+  
+  .tarea-hora {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 5px;
+  }
+  
+  .botones {
+    flex-shrink: 0;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .botones button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .completar-btn {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .completar-btn:hover {
+    background-color: #059669;
+  }
+  
+  .eliminar-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .eliminar-btn:hover {
+    background-color: #dc2626;
+  }
+  
